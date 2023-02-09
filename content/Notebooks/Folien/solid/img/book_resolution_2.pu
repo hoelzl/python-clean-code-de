@@ -1,0 +1,32 @@
+@startuml book_resolution_2
+
+class Book {
+    +title: str
+    +author: str
+    +pages: int
+}
+
+interface BookDao {
+    +save(): None
+}
+
+class SqlBookDao {
+    +save(): None
+}
+
+BookDao <|-- SqlBookDao
+
+interface BookPrinter {
+    +print(): None
+}
+
+class ColorBookPrinter {
+    +print(): None
+}
+
+BookPrinter <|-- ColorBookPrinter
+
+Book <-- SqlBookDao
+Book <-- ColorBookPrinter
+
+@enduml

@@ -1,0 +1,1 @@
+from .fizzbuzz import fizzbuzz
